@@ -18,6 +18,7 @@ import ow from 'openwhisk';
 export function toRuntime(pipe, opts = {}) {
   const { converterCfg = {} } = opts;
 
+  console.log("toRuntime entry: " + new Date());
   return async function (params) {
     const {
       __OW_API_HOST: owApiHost,
@@ -127,4 +128,5 @@ export function toRuntime(pipe, opts = {}) {
       };
     }
   };
+  console.log("toRuntime exit: " + new Date());
 }
